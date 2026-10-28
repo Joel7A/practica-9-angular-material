@@ -1,9 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { LibroService } from '../libro-service';
 
 @Component({
-  imports: [],
   selector: 'app-detalle-libro',
-  styleUrl: './detalle-libro.css',
+  standalone: true,
+  imports: [RouterLink, MatCardModule, MatButtonModule, MatDividerModule],
   templateUrl: './detalle-libro.html',
 })
-export class DetalleLibro {}
+export class DetalleLibro implements OnInit {
+  libroSeleccionado: any;
+
+  constructor(
+    private route: ActivatedRoute,
+    private libroService: LibroService,
+  ) {}
+
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if (id) {
+      this.libroSeleccionado = this.libroService.obtenerLibroPorID(id);
+    }
+  }
+}

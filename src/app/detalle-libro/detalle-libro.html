@@ -1,1 +1,30 @@
-<p>detalle-libro works!</p>
+<div style="padding: 40px; display: flex; justify-content: center">
+  @if (libroSeleccionado) {
+    <mat-card style="width: 100%; max-width: 500px">
+      <mat-card-header>
+        <mat-card-title> Ficha del libro: {{ libroSeleccionado.id }} </mat-card-title>
+
+        <mat-card-subtitle>
+          {{ libroSeleccionado.categoria }}
+        </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-content style="padding-top: 20px; font-size: 1.1rem">
+        <p><strong>Título:</strong> {{ libroSeleccionado.titulo }}</p>
+        <p><strong>Autor:</strong> {{ libroSeleccionado.autor }}</p>
+        <p><strong>Ejemplares disponibles:</strong> {{ libroSeleccionado.disponibles }}</p>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-stroked-button color="accent" routerLink="/libros">⬅ Volver al catálogo</button>
+      </mat-card-actions>
+    </mat-card>
+  } @else {
+    <div>
+      <h2>El libro no existe.</h2>
+      <button mat-raised-button routerLink="/libros">Volver al catálogo</button>
+    </div>
+  }
+</div>

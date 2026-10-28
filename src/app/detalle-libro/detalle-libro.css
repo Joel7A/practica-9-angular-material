@@ -1,0 +1,60 @@
+.contenedor-detalle {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+.tarjeta-detalle {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+}
+.cabecera-tarjeta {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cabecera-tarjeta h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.badge {
+  background: #f1c40f;
+  color: #2c3e50;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.cuerpo-tarjeta {
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+.pie-tarjeta {
+  padding: 20px;
+  background: #ecf0f1;
+  text-align: right;
+}
+.btn-volver {
+  background: #7f8c8d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-volver:hover {
+  background: #95a5a6;
+}
+.error {
+  text-align: center;
+  color: red;
+  margin-top: 50px;
+}

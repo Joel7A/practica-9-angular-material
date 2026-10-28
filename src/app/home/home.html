@@ -1,1 +1,24 @@
-<p>home works!</p>
+<div style="padding: 30px; max-width: 900px; margin: 0 auto">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Bienvenido a la Biblioteca Digital</mat-card-title>
+      <mat-card-subtitle>Explora nuestro catálogo de libros</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label>Buscar libros por categoría</mat-label>
+
+        <mat-select (selectionChange)="filtrarPorCategoria($event.value)">
+          <mat-option value="Todas">Todas</mat-option>
+          <mat-option value="Programación">Programación</mat-option>
+          <mat-option value="Bases de Datos">Bases de Datos</mat-option>
+          <mat-option value="Redes">Redes</mat-option>
+          <mat-option value="Ciencias Básicas">Ciencias Básicas</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <app-tabla-libros [lista]="librosEnPantalla"></app-tabla-libros>
+    </mat-card-content>
+  </mat-card>
+</div>
